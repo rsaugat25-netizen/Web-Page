@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peak Adventures | Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main style="padding: 20px;">
+        <h1>Contact Us</h1>
+        <form id="contactForm">
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" required><br><br>
+            
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" required><br><br>
+            
+            <label for="message">Message:</label><br>
+            <textarea id="message" rows="6" required></textarea><br><br>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Peak Adventures &copy; 2026 | Mountain View, Kathmandu, Nepal</p>
+        <p><a href="mailto:info@peakadventures.com">info@peakadventures.com</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            
+            if (name && email.includes('@')) {
+                alert(`Thank you, ${name}! Your message has been received.`);
+                this.reset();
+            } else {
+                alert('Please fill all fields correctly (valid email required).');
+            }
+        });
+    </script>
+</body>
+</html>
